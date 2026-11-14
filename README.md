@@ -14,7 +14,8 @@ already in your setup.
    **unsupported**.
 3. Suggests the right home for each rule: global `~/.claude/CLAUDE.md`, the project's `CLAUDE.md`, the skill
    it belongs to, or memory.
-4. Lets you pick with a few clicks.
+4. Shows one flat numbered list, one rule per line with its target file; you type the numbers you want
+   (`1 3 5`, `all`, `all except 4`).
 5. Backs the file up and writes only what you picked, without duplicate lines. Conflicting rules are never
    applied unless you choose them.
 

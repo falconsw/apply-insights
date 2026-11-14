@@ -57,48 +57,45 @@ Pick the best home for each rule and say why in a few words:
 F items: check whether that skill / hook already exists. H items: a habit becomes either a one-line rule or a
 small skill — say which fits. I items are ideas, not rules: list them, apply nothing.
 
-## 3. Show it: one list of changes, grouped by file
+## 3. Show it: one flat numbered list, one rule per line
 
-The user must see exactly what will be written where. Don't show the report's codes (K1, F2, H3 …) and don't
-group by report section: turn everything offerable into numbered **changes**, one per target file (a new skill
-or hook is its own change). No raw dumps, no marketing tone, no headings for empty groups.
+No bundles. Every single thing that can be written gets its own number and its own line, with its target in
+brackets in front. Don't show the report's codes (K1, F2 …), don't group by report section, don't merge two
+suggestions into one line. No raw dumps, no marketing tone.
 
 ```
 Report: <date> · <n> sessions analyzed (<total> total) · <first day> – <last day>
 In short: <what works, one line>. <what gets in the way, one line>.
 
-Changes I can make (nothing is written until you pick)
+Can be added (nothing is written until you pick)
+ 1. [CLAUDE.md]         Everything runs locally on my Mac: run commands, or give ready-to-run ones.
+ 2. [CLAUDE.md]         Local databases are MySQL containers in OrbStack, not Cloud SQL.
+ 3. [promo-video skill] Offer 3 angles before a full script.
+ 4. [linkedin memory]   Check eval is on in the extension before starting.
+ 5. [new skill]         /linkedin: one command with the eval check, pacing and save check.
+ 6. [hook]              Run the tests after every edit (can slow down big repos).
 
-1. ~/.claude/CLAUDE.md: add 5 lines under a new "## Environment & ways of working" section
-   + Everything runs locally on my Mac: run commands, or give ready-to-run ones.
-   + …
-   Why: <the friction it fixes, one line with the report's example>
+Not offered
+ – already written: <rule, short> (<file>)
+ – conflicts with your rule: "<report's rule>" vs "<their rule>" (<file>)
+ – not confirmed: <rule> (<why>)
+ – ideas only: <title>, <title>
 
-2. promo-video skill (<real path>/SKILL.md): add 3 lines to "<existing heading>"
-   + …
-   Why: …
-
-3. New skill /linkedin (~/.claude/skills/linkedin/SKILL.md): <what it does, one line>
-   Why: …
-
-Not added
-- Already written: <rule, short> (<file>), …
-- Conflicts with your rule: "<report's rule>" vs "<their rule>" (<file>). Pick it only to replace yours.
-- Not confirmed: <rule> (<why>)
-- Ideas only: <title>, <title>
+Type the numbers to add: e.g. `1 3 5`, `all`, `all except 4`, or `none`.
 ```
 
-- `+` lines are the exact text that will be written, in the target file's language and style.
-- A change to a file that is not CLAUDE.md says why it goes there ("only used when making videos").
-- A conflicting rule is never a numbered change unless the user asks for it after reading "Not added".
+- The text after the bracket is the exact line that will be written (in the target file's language and style);
+  for a new skill or hook it is one line saying what it does.
+- Order: CLAUDE.md lines first, then skills, memory, new skills, hooks. Keep each line to one row where possible.
+- Targets in brackets are short names; give the full paths once under the list if they are not obvious.
+- "Not offered" lines have no number and cannot be picked. A conflicting rule is applied only if the user asks
+  for it in words.
 
 ## 4. Let the user pick
 
-AskUserQuestion with `multiSelect: true`, question "Which changes should I write?", header "Changes". One option
-per numbered change, same number and file in the label ("1. CLAUDE.md +5 lines", "2. promo-video skill +3
-lines", "3. New /linkedin skill"); the description repeats in a few words what those lines say. At most 4 options
-per question; with more changes, split into a second question ("Which of changes 5–8 …"). Nothing offerable: say
-so and stop.
+End the message with the "Type the numbers" line and stop. Do not use AskUserQuestion. Read the reply as a
+selection: numbers in any form (`1 3 5`, `1,3,5`, `1-4`), `all`, `all except …`, `none`. If the reply is unclear,
+ask once in one line. Nothing offerable: say so and stop.
 
 ## 5. Apply what was picked
 
@@ -113,5 +110,5 @@ so and stop.
 
 ## 6. Report back
 
-A short list by change number: what went where (path:line), what was skipped and why, backup paths. Close with
+A short list by number: what went where (path:line), what was skipped and why, backup paths. Close with
 one line: run `/insights` again in a couple of weeks to see whether those frictions went down.
