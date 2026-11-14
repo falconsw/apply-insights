@@ -57,42 +57,48 @@ Pick the best home for each rule and say why in a few words:
 F items: check whether that skill / hook already exists. H items: a habit becomes either a one-line rule or a
 small skill — say which fits. I items are ideas, not rules: list them, apply nothing.
 
-## 3. Show it (plain English, short)
+## 3. Show it: one list of changes, grouped by file
 
-No raw dumps of the report, no marketing tone, no headings for empty groups. Rewrite in plain words.
+The user must see exactly what will be written where. Don't show the report's codes (K1, F2, H3 …) and don't
+group by report section: turn everything offerable into numbered **changes**, one per target file (a new skill
+or hook is its own change). No raw dumps, no marketing tone, no headings for empty groups.
 
 ```
 Report: <date> · <n> sessions analyzed (<total> total) · <first day> – <last day>
+In short: <what works, one line>. <what gets in the way, one line>.
 
-Summary
-- Working: … (one line)
-- Getting in the way: … (one line)
+Changes I can make (nothing is written until you pick)
 
-Where you get stuck
-S1 … — one line, with one concrete example from the report
+1. ~/.claude/CLAUDE.md: add 5 lines under a new "## Environment & ways of working" section
+   + Everything runs locally on my Mac: run commands, or give ready-to-run ones.
+   + …
+   Why: <the friction it fixes, one line with the report's example>
 
-Rules to add
-K1 <short title> → <target file>   [new | partly there | already there: file:line | conflicts: … | unsupported]
-   Why: one line
-   Lines to add (only the new ones, in the target file's language and style):
-   - …
+2. promo-video skill (<real path>/SKILL.md): add 3 lines to "<existing heading>"
+   + …
+   Why: …
 
-Worth trying
-F1 <feature>: what it would do for you, one line. [status]
+3. New skill /linkedin (~/.claude/skills/linkedin/SKILL.md): <what it does, one line>
+   Why: …
 
-Habits
-H1 <title>: one line → rule or skill
-
-On the horizon (ideas only)
-I1 <title>: one line
+Not added
+- Already written: <rule, short> (<file>), …
+- Conflicts with your rule: "<report's rule>" vs "<their rule>" (<file>). Pick it only to replace yours.
+- Not confirmed: <rule> (<why>)
+- Ideas only: <title>, <title>
 ```
+
+- `+` lines are the exact text that will be written, in the target file's language and style.
+- A change to a file that is not CLAUDE.md says why it goes there ("only used when making videos").
+- A conflicting rule is never a numbered change unless the user asks for it after reading "Not added".
 
 ## 4. Let the user pick
 
-Use AskUserQuestion with `multiSelect: true`. Only offer items with status new / partly there (and conflicts
-items as clearly labelled options, never preselected or recommended). At most 4 options per question: group as
-"Rules" and "Features and habits", split further if needed (max 4 questions). Each label names the item
-("K1 LinkedIn pacing"); the description says the target file. If nothing is offerable, say so and stop.
+AskUserQuestion with `multiSelect: true`, question "Which changes should I write?", header "Changes". One option
+per numbered change, same number and file in the label ("1. CLAUDE.md +5 lines", "2. promo-video skill +3
+lines", "3. New /linkedin skill"); the description repeats in a few words what those lines say. At most 4 options
+per question; with more changes, split into a second question ("Which of changes 5–8 …"). Nothing offerable: say
+so and stop.
 
 ## 5. Apply what was picked
 
@@ -107,6 +113,5 @@ items as clearly labelled options, never preselected or recommended). At most 4 
 
 ## 6. Report back
 
-A short list: what went where (path:line), what was skipped and why (already there / conflicts / unsupported),
-backup paths. Close with one line: run `/insights` again in a couple of weeks to see whether those frictions went
-down.
+A short list by change number: what went where (path:line), what was skipped and why, backup paths. Close with
+one line: run `/insights` again in a couple of weeks to see whether those frictions went down.
