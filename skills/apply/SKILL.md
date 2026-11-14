@@ -1,10 +1,10 @@
 ---
-name: apply-insights
+name: apply
 description: Apply your /insights report to CLAUDE.md, rule by rule.
 when_to_use: The user wants to apply, act on or explain a Claude Code /insights report, or move its suggestions into CLAUDE.md, a skill or memory.
 ---
 
-# apply-insights
+# /insights:apply
 
 `/insights` writes an HTML report (`~/.claude/usage-data/report-*.html`) with friction points, CLAUDE.md
 additions, features to try and prompts. This skill turns it into something the user can read in a minute and act
@@ -24,7 +24,7 @@ It prints JSON: `date`, `subtitle` (sessions / messages / date range), `glance` 
 `friction` (S1…), `claude_md` (K1…, each a block of rules + `why`), `features` (F1…, with example code),
 `patterns` (H1…, habits with a copyable prompt), `horizon` (I1…).
 
-- `no_report`: tell the user to type `/insights` (only they can run it), then `/apply-insights` again. Stop.
+- `no_report`: tell the user to type `/insights` (only they can run it), then `/insights:apply` again. Stop.
 - Report older than 7 days: say so in one line and continue; offer a fresh `/insights` at the end.
 
 ## 2. Check every suggestion against what already exists

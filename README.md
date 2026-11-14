@@ -6,7 +6,7 @@ A Claude Code plugin for the `/insights` report.
 CLAUDE.md, features to try. The report is long, in one place, and some of its suggestions don't fit you or are
 already in your setup.
 
-`/apply-insights` reads the latest report and:
+`/insights:apply` reads the latest report and:
 
 1. Sums it up in a few plain lines: what works, where you get stuck.
 2. Checks every suggested rule against the CLAUDE.md, memory and skills you already have, and labels it
@@ -24,20 +24,20 @@ already in your setup.
 In Claude Code:
 
 ```
-/plugin install apply-insights --marketplace falconsw/apply-insights
+/plugin install insights --marketplace falconsw/apply-insights
 ```
 
 On Claude Code older than 2.1.275, add the marketplace first:
 
 ```
 /plugin marketplace add falconsw/apply-insights
-/plugin install apply-insights@apply-insights
+/plugin install insights@apply-insights
 ```
 
 ## Use
 
 1. Type `/insights` and wait for the report (only you can run it).
-2. Type `/apply-insights`.
+2. Type `/insights:apply`.
 
 Run `/insights` again after a couple of weeks to see whether the same frictions show up.
 

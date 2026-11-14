@@ -6,7 +6,7 @@
   },
   "plugins": [
     {
-      "name": "apply-insights",
+      "name": "insights",
       "source": "./",
       "description": "Turn the /insights report into a short summary and apply the suggestions you pick to CLAUDE.md, a skill or memory."
     }
