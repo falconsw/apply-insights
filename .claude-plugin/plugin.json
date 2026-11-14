@@ -1,6 +1,6 @@
 {
   "name": "apply-insights",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Turn the Claude Code /insights report into a short summary, check each suggestion against your existing CLAUDE.md, memory and skills, and apply the ones you pick.",
   "author": {
     "name": "falconsw"

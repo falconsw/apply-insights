@@ -1,6 +1,7 @@
 ---
 name: apply-insights
-description: Turn the latest Claude Code /insights report into a short, plain-English summary and apply the suggestions the user picks to CLAUDE.md, the right skill or memory — checked against the rules they already have, never duplicated. Use when the user types /apply-insights, asks to apply / act on / explain an /insights report, or wants its suggestions moved into CLAUDE.md.
+description: Apply your /insights report to CLAUDE.md, rule by rule.
+when_to_use: The user wants to apply, act on or explain a Claude Code /insights report, or move its suggestions into CLAUDE.md, a skill or memory.
 ---
 
 # apply-insights
