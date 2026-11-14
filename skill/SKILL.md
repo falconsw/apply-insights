@@ -62,7 +62,7 @@ small skill — say which fits. I items are ideas, not rules: list them, apply n
 No raw dumps of the report, no marketing tone, no headings for empty groups. Rewrite in plain words.
 
 ```
-Report: Nov 14, 2026 · 70 sessions analyzed (153 total) · Oct 28 – Nov 14
+Report: <date> · <n> sessions analyzed (<total> total) · <first day> – <last day>
 
 Summary
 - Working: … (one line)
