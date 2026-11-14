@@ -16,7 +16,7 @@ Text added to a file follows that file's existing language and style.
 ## 1. Read the report
 
 ```bash
-python3 -I ~/.claude/skills/apply-insights/parse_report.py   # newest report; or pass a path
+python3 -I <this skill's base directory>/parse_report.py   # newest report; or pass a path
 ```
 
 It prints JSON: `date`, `subtitle` (sessions / messages / date range), `glance` (4 summary paragraphs),

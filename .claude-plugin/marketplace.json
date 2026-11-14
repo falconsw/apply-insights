@@ -1,0 +1,14 @@
+{
+  "name": "apply-insights",
+  "description": "apply-insights: turn the Claude Code /insights report into rules you actually keep.",
+  "owner": {
+    "name": "falconsw"
+  },
+  "plugins": [
+    {
+      "name": "apply-insights",
+      "source": "./",
+      "description": "Turn the /insights report into a short summary and apply the suggestions you pick to CLAUDE.md, a skill or memory."
+    }
+  ]
+}
