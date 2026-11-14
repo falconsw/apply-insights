@@ -7,7 +7,7 @@ description: Turn the latest Claude Code /insights report into a short, plain-En
 
 `/insights` writes an HTML report (`~/.claude/usage-data/report-*.html`) with friction points, CLAUDE.md
 additions, features to try and prompts. This skill turns it into something the user can read in a minute and act
-on with a few clicks. The report is a model's guess from session logs: check each suggestion against what the
+on by typing a few numbers. The report is a model's guess from session logs: check each suggestion against what the
 user already decided before offering it.
 
 Write everything for the user in English (summary, labels, questions), whatever language the conversation is in.
